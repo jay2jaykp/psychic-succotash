@@ -3,19 +3,25 @@ import {
   AppBar,
   Button,
   createStyles,
-  Link,
+  // Link,
   makeStyles,
   Theme,
   Toolbar,
   Typography,
 } from "@material-ui/core";
 
+import { RouterLink } from "./global/routerLinks";
+
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     title: {
       flexGrow: 1,
     },
-    links: {
+    routerLink: {
+      color: "white",
+      textDecoration: "none",
+    },
+    navBtn: {
       margin: "0 50px 0 0",
       color: "white",
       textTransform: "uppercase",
@@ -35,40 +41,20 @@ export const Navbar: React.FC<{}> = (props) => {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" className={classes.title}>
-            ToysUniverse
+            <RouterLink to="/">ToysUniverse</RouterLink>
           </Typography>
-          <Link
-            component="button"
-            variant="body2"
-            underline="none"
-            className={classes.links}
-          >
-            Category
-          </Link>
-          <Link
-            component="button"
-            variant="body2"
-            underline="none"
-            className={classes.links}
-          >
-            Brands
-          </Link>
-          <Link
-            component="button"
-            variant="body2"
-            underline="none"
-            className={classes.links}
-          >
-            Deals
-          </Link>
-          <Link
-            component="button"
-            variant="body2"
-            underline="none"
-            className={classes.links}
-          >
-            New Arrivals
-          </Link>
+          <Button className={classes.navBtn}>
+            <RouterLink to="/category">Category</RouterLink>
+          </Button>
+          <Button className={classes.navBtn}>
+            <RouterLink to="/brand">Brands</RouterLink>
+          </Button>
+          <Button className={classes.navBtn}>
+            <RouterLink to="deals">Deals</RouterLink>
+          </Button>
+          <Button className={classes.navBtn}>
+            <RouterLink to="new">New Arrivals</RouterLink>
+          </Button>
           <Button variant="contained">Login</Button>
         </Toolbar>
       </AppBar>
