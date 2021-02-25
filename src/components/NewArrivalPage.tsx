@@ -8,6 +8,7 @@ import {
   Typography,
 } from "@material-ui/core";
 import { articleData } from "../data/articles";
+import SimpleImageSlider from "react-simple-image-slider";
 
 const useStyle = makeStyles({
   boxWrapper: {
@@ -24,7 +25,7 @@ const useStyle = makeStyles({
 
 export const NewArrivalPage: React.FC<{}> = () => {
   const classes = useStyle();
-  const pageTitle = "New Arrival";
+  const pageTitle = "New Arrivals";
 
   return (
     <>
@@ -42,6 +43,19 @@ export const NewArrivalPage: React.FC<{}> = () => {
           return (
             // <>
             <Card className={classes.artclCard} key={each.id}>
+              <SimpleImageSlider
+                images={each.picturesPath}
+                width="500px"
+                height="300px"
+                showBullets={true}
+                showNavs={true}
+                slideDuration={0.5}
+              />
+              {/* {each.picturesPath.map((src) => {
+                return (
+                  <CardMedia key={src.id} image={src.path} component="img" />
+                );
+              })} */}
               <CardContent>
                 <Typography color="textSecondary">
                   {each.category.join(" | ")}
@@ -50,12 +64,18 @@ export const NewArrivalPage: React.FC<{}> = () => {
                   {each.name}
                 </Typography>
                 <Typography variant="h6">Brand: {each.brand}</Typography>
-                <Button variant="contained" color="primary" href={each.link}>
+                <Button
+                  variant="contained"
+                  color="primary"
+                  href={each.link}
+                  target="_"
+                >
                   Buy
                 </Button>
-                {each.picturesPath.forEach((pic) => {
-                  return <img key={pic} src={pic} alt="pic" />;
-                })}
+                {/* {each.picturesPath.map((pic) => {
+                  // console.log(pic);
+                  return <img src={pic} alt="pic" />;
+                })} */}
               </CardContent>
             </Card>
             // </>
