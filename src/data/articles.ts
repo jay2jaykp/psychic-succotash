@@ -2,10 +2,10 @@ import {
   AnimalPuzzle1,
   AnimalPuzzle2,
   AnimalPuzzle3,
-  // FruitPuzzle1,
-  // FruitPuzzle2,
-  // FruitPuzzle3,
-  // FruitPuzzle4,
+  FruitPuzzle1,
+  FruitPuzzle2,
+  FruitPuzzle3,
+  FruitPuzzle4,
 } from "../data/pictures";
 
 export type articles = {
@@ -14,7 +14,7 @@ export type articles = {
   brand: string;
   category: string[];
   link: string;
-  picturesPath: string[];
+  picturesPath: any[];
 };
 
 export const articleData: articles[] = [
@@ -24,7 +24,12 @@ export const articleData: articles[] = [
     brand: "MR Enterprise",
     category: ["Puzzles", "Wooden", "Kids"],
     link: "https://popshop.in/toysuniverse/wXS",
-    picturesPath: [AnimalPuzzle1, AnimalPuzzle2, AnimalPuzzle3],
+    picturesPath: [
+      { id: 1, url: AnimalPuzzle1 },
+      { id: 2, url: AnimalPuzzle2 },
+      { id: 3, url: AnimalPuzzle3 },
+    ],
+    // picturesPath: [AnimalPuzzle1, AnimalPuzzle2, AnimalPuzzle3],
   },
   {
     id: 2,
@@ -32,6 +37,12 @@ export const articleData: articles[] = [
     brand: "MR Enterprise",
     category: ["Puzzles", "Wooden", "Kids"],
     link: "https://popshop.in/toysuniverse/wXS",
-    picturesPath: [""], //[FruitPuzzle4, FruitPuzzle3, FruitPuzzle2],
+    picturesPath: [
+      { id: 1, url: FruitPuzzle1 },
+      { id: 2, url: FruitPuzzle2 },
+      { id: 3, url: FruitPuzzle3 },
+      { id: 4, url: FruitPuzzle4 },
+    ],
+    // picturesPath: [FruitPuzzle4, FruitPuzzle3, FruitPuzzle2],
   },
 ];

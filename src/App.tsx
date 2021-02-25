@@ -1,6 +1,11 @@
 import React from "react";
 import { Navbar } from "./components/navbar";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
 import { HomePage } from "./components/HomePage";
 import { AboutPage } from "./components/AboutPage";
 import { CategoryPage } from "./components/CategoryPage";
@@ -16,7 +21,7 @@ function App() {
         <Navbar />
         <Container>
           <Switch>
-            <Route exact path="/about">
+            {/* <Route exact path="/about">
               <AboutPage />
             </Route>
             <Route exact path="/category">
@@ -27,13 +32,15 @@ function App() {
             </Route>
             <Route exact path="/deals">
               <DealsPage />
-            </Route>
+            </Route> */}
             <Route exact path="/new">
               <NewArrivalPage />
             </Route>
-            <Route path="/">
-              <HomePage />
-            </Route>
+            <Redirect from="*" to="/new">
+              <Route path="/">
+                <HomePage />
+              </Route>
+            </Redirect>
           </Switch>
         </Container>
       </Router>
