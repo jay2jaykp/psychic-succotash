@@ -1,7 +1,9 @@
+import { NewArrivalPage } from "./NewArrivalPage";
+
 export const HomePage: React.FC<{}> = () => {
   return (
     <>
-      <h1>HomePage</h1>
+      <NewArrivalPage />
     </>
   );
 };

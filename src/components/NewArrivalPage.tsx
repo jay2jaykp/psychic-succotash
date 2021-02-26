@@ -9,6 +9,7 @@ import {
 } from "@material-ui/core";
 import { articleData } from "../data/articles";
 import SimpleImageSlider from "react-simple-image-slider";
+import { PageHeader } from "./global/PageHeader";
 
 const useStyle = makeStyles({
   boxWrapper: {
@@ -29,9 +30,7 @@ export const NewArrivalPage: React.FC<{}> = () => {
 
   return (
     <>
-      <Typography className={classes.pageTitle} variant="h4" align="center">
-        ~~ {pageTitle} ~~
-      </Typography>
+      <PageHeader pageTitle={pageTitle} />
       <Box
         className={classes.boxWrapper}
         flexGrow={1}
@@ -46,7 +45,7 @@ export const NewArrivalPage: React.FC<{}> = () => {
               <SimpleImageSlider
                 images={each.picturesPath}
                 width="500px"
-                height="300px"
+                height="400px"
                 showBullets={true}
                 showNavs={true}
                 slideDuration={0.5}

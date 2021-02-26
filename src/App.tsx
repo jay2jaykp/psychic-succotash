@@ -7,19 +7,19 @@ import {
   Switch,
 } from "react-router-dom";
 import { HomePage } from "./components/HomePage";
-import { AboutPage } from "./components/AboutPage";
-import { CategoryPage } from "./components/CategoryPage";
-import { BrandPage } from "./components/BrandPage";
-import { DealsPage } from "./components/DealsPage";
+// import { AboutPage } from "./components/AboutPage";
+// import { CategoryPage } from "./components/CategoryPage";
+// import { BrandPage } from "./components/BrandPage";
+// import { DealsPage } from "./components/DealsPage";
 import { NewArrivalPage } from "./components/NewArrivalPage";
-import { Container } from "@material-ui/core";
+import { Box } from "@material-ui/core";
 
 function App() {
   return (
     <>
       <Router>
         <Navbar />
-        <Container>
+        <Box>
           <Switch>
             {/* <Route exact path="/about">
               <AboutPage />
@@ -36,13 +36,12 @@ function App() {
             <Route exact path="/new">
               <NewArrivalPage />
             </Route>
-            <Redirect from="*" to="/new">
-              <Route path="/">
-                <HomePage />
-              </Route>
-            </Redirect>
+            <Route path="/">
+              <HomePage />
+            </Route>
+            <Redirect from="*" to="/new" />
           </Switch>
-        </Container>
+        </Box>
       </Router>
     </>
   );

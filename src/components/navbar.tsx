@@ -43,7 +43,7 @@ export const Navbar: React.FC<{}> = (props) => {
           <Typography variant="h6" className={classes.title}>
             <RouterLink to="/">ToysUniverse</RouterLink>
           </Typography>
-          <Button className={classes.navBtn}>
+          {/* <Button className={classes.navBtn}>
             <RouterLink to="/category">Category</RouterLink>
           </Button>
           <Button className={classes.navBtn}>
@@ -54,8 +54,8 @@ export const Navbar: React.FC<{}> = (props) => {
           </Button>
           <Button className={classes.navBtn}>
             <RouterLink to="new">New Arrivals</RouterLink>
-          </Button>
-          <Button variant="contained">Login</Button>
+          </Button> */}
+          <Button variant="contained">Contact</Button>
         </Toolbar>
       </AppBar>
     </>
