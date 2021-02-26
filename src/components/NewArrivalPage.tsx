@@ -18,6 +18,7 @@ const useStyle = makeStyles({
   },
   artclCard: {
     width: "500px",
+    margin: "10px",
   },
   pageTitle: {
     padding: "10px",
@@ -34,6 +35,7 @@ export const NewArrivalPage: React.FC<{}> = () => {
       <Box
         className={classes.boxWrapper}
         flexGrow={1}
+        flexWrap="wrap"
         display="flex"
         alignContent="center"
         justifyContent="space-evenly"
@@ -41,7 +43,7 @@ export const NewArrivalPage: React.FC<{}> = () => {
         {articleData.map((each) => {
           return (
             // <>
-            <Card className={classes.artclCard} key={each.id}>
+            <Card className={classes.artclCard} key={each.id} elevation={2}>
               <SimpleImageSlider
                 images={each.picturesPath}
                 width="500px"
@@ -49,12 +51,8 @@ export const NewArrivalPage: React.FC<{}> = () => {
                 showBullets={true}
                 showNavs={true}
                 slideDuration={0.5}
+                navStyle={2}
               />
-              {/* {each.picturesPath.map((src) => {
-                return (
-                  <CardMedia key={src.id} image={src.path} component="img" />
-                );
-              })} */}
               <CardContent>
                 <Typography color="textSecondary">
                   {each.category.join(" | ")}
@@ -71,10 +69,6 @@ export const NewArrivalPage: React.FC<{}> = () => {
                 >
                   Buy
                 </Button>
-                {/* {each.picturesPath.map((pic) => {
-                  // console.log(pic);
-                  return <img src={pic} alt="pic" />;
-                })} */}
               </CardContent>
             </Card>
             // </>

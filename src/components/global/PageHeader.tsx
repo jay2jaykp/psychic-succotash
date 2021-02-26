@@ -1,9 +1,18 @@
-import { Container, makeStyles, Typography } from "@material-ui/core";
+import {
+  Box,
+  Button,
+  // Container,
+  makeStyles,
+  // Paper,
+  Typography,
+} from "@material-ui/core";
 import React from "react";
 
 const useStyle = makeStyles({
   title: {
     margin: "10px",
+    textAlign: "center",
+    width: "500px",
   },
 });
 
@@ -15,11 +24,23 @@ export const PageHeader: React.FC<pageHeaderType> = (props) => {
   const classes = useStyle();
   return (
     <>
-      <Container>
-        <Typography className={classes.title} variant="h4" component="h4">
-          {props.pageTitle}
-        </Typography>
-      </Container>
+      <Box display="flex" justifyContent="center">
+        <Box>
+          <Button
+            className={classes.title}
+            color="primary"
+            variant="contained"
+            size="large"
+            disableFocusRipple
+            disableRipple
+            disableElevation
+          >
+            <Typography variant="h5" component="h5">
+              {props.pageTitle}
+            </Typography>
+          </Button>
+        </Box>
+      </Box>
     </>
   );
 };
